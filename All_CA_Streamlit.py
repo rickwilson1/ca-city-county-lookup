@@ -134,5 +134,29 @@ if user_address:
                 st.error("Could not geocode that address. Please try again.")
         except Exception as e:
             st.error(f"Error: {e}")
-            
+
+# Add this at the very bottom of your Streamlit script
+
+st.markdown(
+    """
+    <style>
+    .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: white;
+        color: gray;
+        text-align: center;
+        font-size: 12px;
+        padding: 8px;
+        border-top: 1px solid #e6e6e6;
+    }
+    </style>
+    <div class="footer">
+        City and county determinations in this tool are based on the official California statewide GIS boundary datasets.
+    </div>
+    """,
+    unsafe_allow_html=True
+)
             
