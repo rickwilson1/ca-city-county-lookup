@@ -135,22 +135,23 @@ if user_address:
         except Exception as e:
             st.error(f"Error: {e}")
 
-# Add this at the very bottom of your Streamlit script
-
+# Sticky footer disclaimer
 st.markdown(
     """
     <style>
+    .reportview-container .main footer {visibility: hidden;} /* hide default footer */
     .footer {
         position: fixed;
         left: 0;
         bottom: 0;
         width: 100%;
-        background-color: white;
+        background-color: #ffffff;
         color: gray;
         text-align: center;
         font-size: 12px;
-        padding: 8px;
+        padding: 6px;
         border-top: 1px solid #e6e6e6;
+        z-index: 100;
     }
     </style>
     <div class="footer">
@@ -159,4 +160,4 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-            
+
